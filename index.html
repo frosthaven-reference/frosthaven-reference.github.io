@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frosthaven Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── Variables ── */
+:root {
+  --bg:           #f0f4f7;
+  --card:         #ffffff;
+  --border:       #d0dce6;
+  --text:         #1a2a38;
+  --text-sec:     #4a6070;
+  --muted:        #708090;
+  --gold:         #c8a84b;
+  --gold-dark:    #a07a20;
+  --hi-bg:        rgba(200,168,75,.10);
+  --hi-border:    #c8a84b;
+  --tbl-alt:      #f4f8fb;
+  --badge-sz:     48px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #0e1820;
+    --card:      #162230;
+    --border:    #243040;
+    --text:      #dce8f2;
+    --text-sec:  #8aabb8;
+    --muted:     #5a7a8a;
+    --hi-bg:     rgba(200,168,75,.12);
+    --tbl-alt:   #0f1e2a;
+  }
+}
+
+/* ── Reset / Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 540px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ── Sticky shell ── */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+}
+
+/* ── Header ── */
+.site-header {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-snowflake {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.header-text { flex: 1; }
+.site-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .03em;
+  line-height: 1.2;
+}
+.site-subtitle {
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .05em;
+  margin-top: 2px;
+}
+
+/* ── Tab nav ── */
+.tab-nav {
+  display: flex;
+  border-bottom: 2px solid var(--border);
+  background: var(--bg);
+}
+.tab-btn {
+  flex: 1;
+  padding: 10px 4px;
+  border: none;
+  background: none;
+  font-family: 'Cinzel', serif;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color .15s, border-color .15s;
+  text-transform: uppercase;
+}
+.tab-btn:hover { color: var(--text-sec); }
+.tab-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ── Main content ── */
+main { padding: 16px 12px 48px; }
+
+/* ── Section header ── */
+.section-header {
+  font-family: 'Cinzel', serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 20px 4px 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.section-header:first-child { padding-top: 6px; }
+
+/* ── Card ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.card-meta { flex: 1; min-width: 0; }
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.card-sub {
+  display: block;
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.card-body {
+  padding: 12px 14px;
+  font-size: .92rem;
+  line-height: 1.6;
+  color: var(--text-sec);
+}
+.card-body p + p { margin-top: 8px; }
+
+/* ── Badge images (game tokens) ── */
+.badge-img {
+  width: var(--badge-sz);
+  height: var(--badge-sz);
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+/* ── Badge SVGs (hand-drawn hex) ── */
+.badge-svg {
+  width: var(--badge-sz);
+  height: var(--badge-sz);
+  flex-shrink: 0;
+}
+
+/* ── Tag ── */
+.tag-new {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 3px;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+/* ── Callout ── */
+.callout {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 9px 11px;
+  background: var(--hi-bg);
+  border-left: 3px solid var(--hi-border);
+  border-radius: 0 6px 6px 0;
+  font-size: .86rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.callout-icon { flex-shrink: 0; font-style: normal; }
+
+/* ── Tables ── */
+.ref-table, .level-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: .85rem;
+}
+.ref-table th, .ref-table td,
+.level-table th, .level-table td {
+  padding: 6px 8px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+.ref-table th, .level-table th {
+  background: var(--tbl-alt);
+  font-weight: 700;
+  font-family: 'Cinzel', serif;
+  font-size: .75rem;
+  letter-spacing: .05em;
+  color: var(--text);
+}
+.ref-table tr:nth-child(even) td,
+.level-table tr:nth-child(even) td { background: var(--tbl-alt); }
+
+.level-table td:first-child {
+  font-weight: 700;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  width: 36px;
+}
+.level-table td { text-align: center; }
+.level-table .rec-note {
+  margin-top: 8px;
+  font-size: .8rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Tab panels ── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Badge: plain icon with solid background ── */
+.badge-icon-wrap {
+  width: var(--badge-sz);
+  height: var(--badge-sz);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.badge-icon-wrap img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* ── Inline icon ── */
+.icon-inline {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin: 0 2px;
+  position: relative;
+  top: -1px;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     STICKY SHELL: header + tab nav
+═══════════════════════════════════════════ -->
+<div class="sticky-top">
+  <header class="site-header">
+    <!-- Hand-drawn snowflake -->
+    <svg class="header-snowflake" width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <!-- 6 main arms -->
+      <line x1="17" y1="2"    x2="17" y2="32"   stroke="currentColor" stroke-width="2"   stroke-linecap="round"/>
+      <line x1="2.2" y1="9.5" x2="31.8" y2="24.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="2.2" y1="24.5" x2="31.8" y2="9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <!-- barbs — top arm -->
+      <line x1="17" y1="10" x2="13" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="17" y1="10" x2="21" y2="7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="17" y1="24" x2="13" y2="27" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="17" y1="24" x2="21" y2="27" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- barbs — upper-right arm -->
+      <line x1="23.5" y1="12.3" x2="27.2" y2="11.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="23.5" y1="12.3" x2="22.2" y2="8.8"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- barbs — lower-right arm -->
+      <line x1="23.5" y1="21.7" x2="27.2" y2="22.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="23.5" y1="21.7" x2="22.2" y2="25.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- barbs — upper-left arm -->
+      <line x1="10.5" y1="12.3" x2="6.8" y2="11.3"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="10.5" y1="12.3" x2="11.8" y2="8.8"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- barbs — lower-left arm -->
+      <line x1="10.5" y1="21.7" x2="6.8" y2="22.7"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="10.5" y1="21.7" x2="11.8" y2="25.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <div class="header-text">
+      <h1 class="site-title">Frosthaven Reference</h1>
+      <p class="site-subtitle">Icons &amp; Commonly Forgotten Rules</p>
+    </div>
+  </header>
+
+  <nav class="tab-nav" role="tablist" aria-label="Reference sections">
+    <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-conditions" id="btn-conditions">Conditions</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-attack"     id="btn-attack">Attack</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-movement"   id="btn-movement">Movement</button>
+  </nav>
+</div><!-- /sticky-top -->
+
+
+<!-- ═══════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════ -->
+<main>
+
+<!-- ─────────────────────────────────────────
+     CONDITIONS TAB
+───────────────────────────────────────── -->
+<div id="tab-conditions" class="tab-panel active" role="tabpanel" aria-labelledby="btn-conditions">
+
+  <h2 class="section-header">Negative conditions</h2>
+
+  <!-- BANE -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/bane.svg" class="badge-img" alt="Bane token">
+      <div class="card-meta">
+        <div class="card-title">Bane</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Suffer <strong>10 damage</strong> at the end of your next turn — unless you are healed before it triggers. Any heal applied before the end of that turn removes Bane and prevents the damage entirely.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>The heal does <em>not</em> have to restore you to full HP. Even a 1 HP heal removes Bane before it fires. <em>(p. 29)</em></span></div>
+    </div>
+  </div>
+
+  <!-- IMMOBILIZE -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/immobilize.svg" class="badge-img" alt="Immobilize token">
+      <div class="card-meta">
+        <div class="card-title">Immobilize</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Cannot <strong>move</strong> voluntarily. The figure may still perform all other actions normally.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span><em>Forced</em> movement (Push, Pull, or other move effects applied by another figure) still works normally — Immobilize only prevents self-directed movement. <em>(p. 28)</em></span></div>
+    </div>
+  </div>
+
+  <!-- DISARM -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/disarm.svg" class="badge-img" alt="Disarm token">
+      <div class="card-meta">
+        <div class="card-title">Disarm</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Cannot perform any <strong>attack</strong> abilities. The figure may still move, use items, and perform non-attack abilities. <em>(p. 28)</em></p>
+    </div>
+  </div>
+
+  <!-- IMPAIR -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/impair.svg" class="badge-img" alt="Impair token">
+      <div class="card-meta">
+        <div class="card-title">Impair</div>
+        <span class="card-sub">Negative condition · Characters only</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Cannot <strong>use or trigger any items</strong>. Bonuses already active from previously used items remain in effect. Removed at the end of your next turn.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Impair only affects characters — monsters cannot gain this condition. A character with Impair still benefits from item bonuses already on their mat; they simply cannot activate new ones. <em>(p. 29)</em></span></div>
+    </div>
+  </div>
+
+  <!-- MUDDLE -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/muddle.svg" class="badge-img" alt="Muddle token">
+      <div class="card-meta">
+        <div class="card-title">Muddle</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Perform all attacks at <strong>Disadvantage</strong>. Draw two attack modifier cards; use the worse result and ignore the better one. <em>(p. 28)</em></p>
+    </div>
+  </div>
+
+  <!-- STUN -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/stun.svg" class="badge-img" alt="Stun token">
+      <div class="card-meta">
+        <div class="card-title">Stun</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Cannot perform <strong>any abilities</strong> and cannot use items on your turn.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>A stunned character must <em>still</em> play two cards at the start of the round to determine initiative. They simply cannot act when their turn comes. <em>(p. 28)</em></span></div>
+    </div>
+  </div>
+
+  <!-- BRITTLE -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/brittle.svg" class="badge-img" alt="Brittle token">
+      <div class="card-meta">
+        <div class="card-title">Brittle</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>The <strong>next instance of damage</strong> you suffer is doubled. Brittle is then removed. Brittle is also removed if you are healed.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Doubling happens after all other modifiers. A Brittle figure with Shield 2 hit by a 3-damage attack: 3 − 2 = 1 → doubled = 2 damage. <em>(p. 29)</em></span></div>
+    </div>
+  </div>
+
+  <!-- WOUND -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/wound.svg" class="badge-img" alt="Wound token">
+      <div class="card-meta">
+        <div class="card-title">Wound</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Suffer <strong>1 damage</strong> at the start of each of your turns. Removed when you are healed (any amount). <em>(p. 29)</em></p>
+    </div>
+  </div>
+
+  <!-- POISON -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/poison.svg" class="badge-img" alt="Poison token">
+      <div class="card-meta">
+        <div class="card-title">Poison</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>All attacks targeting you gain <strong>+1 attack</strong>. Poison is removed when you are healed, but the heal restores <em>no HP</em> while Poison is active.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Wound and Poison can both be active simultaneously. Wound deals 1 damage per turn; Poison makes all incoming attacks hit harder. Heals will clear both, but restore no HP until Poison is gone. <em>(p. 29)</em></span></div>
+    </div>
+  </div>
+
+  <!-- CURSE -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/curse.svg" class="badge-img" alt="Curse token">
+      <div class="card-meta">
+        <div class="card-title">Curse</div>
+        <span class="card-sub">Negative condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Shuffle a <strong>×0 null card</strong> into your attack modifier deck. Curse is consumed when the null card is drawn — it is <em>not</em> a standard end-of-turn condition.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Curses add multiple ×0 cards. You can have up to 10 curse cards in your deck at once. <em>(p. 29)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">Positive conditions</h2>
+
+  <!-- BLESS -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/bless.svg" class="badge-img" alt="Bless token">
+      <div class="card-meta">
+        <div class="card-title">Bless</div>
+        <span class="card-sub">Positive condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Shuffle a <strong>×2 crit card</strong> into your attack modifier deck. Bless is consumed when the ×2 card is drawn — it is <em>not</em> a standard end-of-turn condition.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Blesses add multiple ×2 cards. You can have up to 10 bless cards in your deck at once. <em>(p. 29)</em></span></div>
+    </div>
+  </div>
+
+  <!-- STRENGTHEN -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/strengthen.svg" class="badge-img" alt="Strengthen token">
+      <div class="card-meta">
+        <div class="card-title">Strengthen</div>
+        <span class="card-sub">Positive condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Perform all attacks at <strong>Advantage</strong>. Draw two attack modifier cards; apply all rolling effects from both, then use the <em>better</em> non-rolling result and discard the worse. <em>(p. 28)</em></p>
+    </div>
+  </div>
+
+  <!-- INVISIBLE -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/invisible.svg" class="badge-img" alt="Invisible token">
+      <div class="card-meta">
+        <div class="card-title">Invisible</div>
+        <span class="card-sub">Positive condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Cannot be <strong>targeted</strong> by any enemy ability. Enemies act as if you are not there when choosing targets.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Invisible does <em>not</em> prevent AoE damage. If an AoE ability covers your hex, you still suffer the effect — you just can't be the chosen primary target. <em>(p. 28)</em></span></div>
+    </div>
+  </div>
+
+  <!-- REGENERATE -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/regenerate.svg" class="badge-img" alt="Regenerate token">
+      <div class="card-meta">
+        <div class="card-title">Regenerate</div>
+        <span class="card-sub">Positive condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Heal 1 HP</strong> at the start of each of your turns. Regenerate is removed when the figure suffers damage — not at end of turn.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Regenerate and Wound/Poison can be active simultaneously. Wound/Poison damage at start of turn will remove Regenerate, so you'd take the damage without the heal that round. <em>(p. 28)</em></span></div>
+    </div>
+  </div>
+
+  <!-- WARD -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/ward.svg" class="badge-img" alt="Ward token">
+      <div class="card-meta">
+        <div class="card-title">Ward</div>
+        <span class="card-sub">Positive condition</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>The <strong>next instance of damage</strong> you would suffer is halved (rounded down). Ward is then removed.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Halving applies to the final damage after shields. Ward + Shield 2, incoming 5: 5 − 2 = 3 → halved = 1 damage. <em>(p. 28)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>If a figure has both <strong>Ward and Brittle</strong> when it suffers damage, they negate each other — both are removed and neither effect applies. <em>(p. 28)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">When conditions expire</h2>
+
+  <!-- CONDITION TIMING — text-only -->
+  <div class="card">
+    <div class="card-body">
+      <p>Most conditions say "removed at the <strong>end of your next turn</strong>." The key is <em>when</em> the condition was applied:</p>
+      <p><strong>Applied during your turn</strong> — the condition is active for the rest of your current turn <em>and</em> your entire following turn. It is removed at the end of that following turn.</p>
+      <p><strong>Applied between turns</strong> (by a trap, end-of-round effect, or enemy action during their turn) — the condition lasts through your <em>next</em> full turn and is removed at the end of it.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>A condition applied <em>during</em> your turn does <strong>not</strong> clear at the end of that same turn. It persists through your next turn. You always get at least one full turn with a condition active.</span></div>
+    </div>
+  </div>
+
+</div><!-- /tab-conditions -->
+
+
+<!-- ─────────────────────────────────────────
+     ATTACK TAB
+───────────────────────────────────────── -->
+<div id="tab-attack" class="tab-panel" role="tabpanel" aria-labelledby="btn-attack">
+
+  <h2 class="section-header">Attack modifier rules</h2>
+
+  <!-- ADVANTAGE & DISADVANTAGE -->
+  <div class="card">
+    <div class="card-header">
+      <svg class="badge-svg" viewBox="0 0 40 40" aria-label="Advantage & Disadvantage badge">
+        <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#c8a84b" stroke="#a07820" stroke-width="1.5"/>
+        <!-- two overlapping card rects -->
+        <rect x="8"  y="11" width="13" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
+        <rect x="15" y="9"  width="13" height="18" rx="2" fill="#c8a84b" stroke="white" stroke-width="1.8"/>
+        <!-- lines suggesting card face -->
+        <line x1="18" y1="14" x2="25" y2="14" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="18" y1="17" x2="25" y2="17" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <div class="card-meta">
+        <div class="card-title">Advantage &amp; Disadvantage</div>
+        <span class="card-sub">Attack modifier rule</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Advantage:</strong> Draw cards until you reveal a non-rolling card, then draw one more. Apply all rolling effects and use the <em>better</em> of the two final non-rolling cards. A monster always uses the better card; a character <em>may choose either</em>.</p>
+      <p><strong>Disadvantage:</strong> Draw cards until you reveal a non-rolling card, then draw one more. Ignore all rolling effects. Use the <em>worse</em> of the two final non-rolling cards.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Under Disadvantage, rolling modifier effects are <em>entirely ignored</em> — the cards are discarded without effect before comparing the final two. <em>(p. 27)</em></span></div>
+    </div>
+  </div>
+
+  <!-- ROLLING MODIFIERS -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/rolling.svg" class="badge-img" alt="Rolling modifier token">
+      <div class="card-meta">
+        <div class="card-title">Rolling Modifiers (↻)</div>
+        <span class="card-sub">Attack modifier rule</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>When you draw a rolling modifier card, <strong>add its effect</strong> to the attack and draw another card. Keep drawing until you reveal a non-rolling card. All rolling effects stack.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Rolling effects are cumulative — multiple rolling +1 cards each add +1. The chain only ends when a non-rolling card is drawn. <em>(p. 25)</em></span></div>
+    </div>
+  </div>
+
+  <!-- NULL CARD ×0 -->
+  <div class="card">
+    <div class="card-header">
+      <svg class="badge-svg" viewBox="0 0 40 40" aria-label="Null card badge">
+        <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#c0392b" stroke="#8a1a10" stroke-width="1.5"/>
+        <!-- X shape -->
+        <line x1="12" y1="12" x2="28" y2="28" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="28" y1="12" x2="12" y2="28" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
+      </svg>
+      <div class="card-meta">
+        <div class="card-title">Null Card (×0)</div>
+        <span class="card-sub">Attack modifier rule</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Deal <strong>0 damage</strong>. The modifier deck is reshuffled immediately after this card is drawn. All attack effects on the ability — conditions, Push, Pull, etc. — are also ignored.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>A ×0 nullifies <em>everything</em>: damage, conditions, forced movement, and any other effects tied to that attack all do nothing. <em>(p. 25)</em></span></div>
+    </div>
+  </div>
+
+  <!-- CRIT CARD ×2 -->
+  <div class="card">
+    <div class="card-header">
+      <svg class="badge-svg" viewBox="0 0 40 40" aria-label="Crit card badge">
+        <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#c8a84b" stroke="#a07820" stroke-width="1.5"/>
+        <text x="20" y="26" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="Lato,sans-serif">×2</text>
+      </svg>
+      <div class="card-meta">
+        <div class="card-title">Crit Card (×2)</div>
+        <span class="card-sub">Attack modifier rule</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Deal <strong>double damage</strong>. The modifier deck is reshuffled immediately after this card is drawn. <em>(p. 25)</em></p>
+    </div>
+  </div>
+
+  <h2 class="section-header">Attack effect timing</h2>
+
+  <!-- ATTACK EFFECT TIMING — text-only with table -->
+  <div class="card">
+    <div class="card-body">
+      <p>Attack effects are applied in a specific order relative to the damage roll. Effects that say "on this attack" apply when listed below:</p>
+      <table class="ref-table">
+        <thead>
+          <tr><th>Effect</th><th>When applied</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>+X Attack</td><td>During damage calculation</td></tr>
+          <tr><td>Pierce X</td><td>During damage calculation</td></tr>
+          <tr><td>Conditions (Wound, etc.)</td><td>After damage resolves</td></tr>
+          <tr><td>Push X / Pull X</td><td>After damage resolves</td></tr>
+          <tr><td>+X Target</td><td>After attack resolves (next target)</td></tr>
+          <tr><td>Elemental infuse</td><td>End of your turn</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Attack effects (conditions, Push/Pull) apply <em>even if the attack deals 0 damage</em> after shields — unless a ×0 null card was drawn. <em>(p. 26)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">Shield &amp; Pierce</h2>
+
+  <!-- SHIELD & PIERCE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge-icon-wrap" style="background:#3a5a8a">
+        <img src="assets/icons/shield.svg" alt="Shield icon">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Shield &amp; Pierce</div>
+        <span class="card-sub">Defense rule</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Shield X</strong> reduces incoming attack damage by X for each separate attack. Shield applies after the attack modifier is resolved but before effects like Brittle or Ward.</p>
+      <p><strong>Pierce X</strong> ignores X points of a target's Shield on this attack. Multiple Pierce effects stack.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Shield does <em>not</em> reduce damage from traps, hazardous terrain, Wound, Poison, Bane, or any condition. It only applies to standard attack damage. <em>(p. 31)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">Retaliate</h2>
+
+  <!-- RETALIATE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge-icon-wrap" style="background:#7a3a20">
+        <img src="assets/icons/retaliate.svg" alt="Retaliate icon">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Retaliate</div>
+        <span class="card-sub">Defense rule</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Retaliate X</strong> causes the attacker to suffer X damage after their attack resolves. Retaliate is triggered by being attacked — not by taking damage.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>An attack fully blocked by Shield (dealing 0 damage) <em>still</em> triggers Retaliate. However, if the attacker is killed by that attack, Retaliate does not trigger — lethal attacks do not trigger Retaliate. <em>(p. 31)</em></span></div>
+    </div>
+  </div>
+
+</div><!-- /tab-attack -->
+
+
+<!-- ─────────────────────────────────────────
+     MOVEMENT TAB
+───────────────────────────────────────── -->
+<div id="tab-movement" class="tab-panel" role="tabpanel" aria-labelledby="btn-movement">
+
+  <h2 class="section-header">Move &amp; Jump</h2>
+
+  <!-- MOVE & JUMP — text-only -->
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Move X</strong> allows you to move up to X hexes. Each hex entered costs 1 movement, except difficult terrain which costs 2.</p>
+      <p><strong>Jump</strong> (as part of a Move ability) ignores all terrain and figures <em>along the path</em>. The final hex still costs 1 movement, still obeys occupancy rules, and still triggers hazardous terrain on landing.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>You cannot end your movement on an occupied hex — whether ally, enemy, or obstacle — unless it is an empty hex you can legally enter. <em>(p. 24)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">Terrain types</h2>
+
+  <!-- TERRAIN — text-only with table -->
+  <div class="card">
+    <div class="card-body">
+      <table class="ref-table">
+        <thead>
+          <tr><th>Terrain</th><th>Effect on movement</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Difficult terrain</td><td>Costs 2 movement to enter (not with Jump)</td></tr>
+          <tr><td>Hazardous terrain</td><td>Suffer damage on entry</td></tr>
+          <tr><td>Obstacles</td><td>Cannot enter or pass through</td></tr>
+          <tr><td>Walls</td><td>Block movement and line-of-sight</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><span class="callout-icon">⚠</span><span><strong>Flying</strong> skips difficult terrain costs <em>and</em> avoids hazardous terrain damage entirely, including on the landing hex. <strong>Jumping</strong> skips difficult terrain costs but still takes hazardous terrain damage on the landing hex. <em>(p. 24)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">Push &amp; Pull</h2>
+
+  <!-- PUSH & PULL — text-only -->
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Push X</strong> forces the target to move up to X hexes, with each hex moving the target <em>farther away</em> from the source. <strong>Pull X</strong> moves the target up to X hexes <em>closer</em>. The attacker chooses the path.</p>
+      <p>Forced movement triggers hazardous terrain on each hex entered. The pushed/pulled figure can be moved through friendly figures, but not through enemies or obstacles.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Forced movement does <em>not</em> cost extra for difficult terrain — it ignores movement point costs entirely. It can also be used to move a figure onto a hazardous hex intentionally. <em>(p. 32)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">Scenario level reference</h2>
+
+  <!-- LEVEL TABLE -->
+  <div class="card">
+    <div class="card-body">
+      <table class="level-table">
+        <thead>
+          <tr>
+            <th>Lvl</th>
+            <th>Monster<br>level</th>
+            <th>Gold<br>conv.</th>
+            <th>Trap<br>dmg</th>
+            <th>Hazard<br>dmg</th>
+            <th>XP<br>bonus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>0</td><td>2</td><td>2</td><td>1</td><td>4</td></tr>
+          <tr><td>1</td><td>1</td><td>2</td><td>3</td><td>2</td><td>6</td></tr>
+          <tr><td>2</td><td>2</td><td>3</td><td>4</td><td>2</td><td>8</td></tr>
+          <tr><td>3</td><td>3</td><td>3</td><td>5</td><td>2</td><td>10</td></tr>
+          <tr><td>4</td><td>4</td><td>4</td><td>6</td><td>3</td><td>12</td></tr>
+          <tr><td>5</td><td>5</td><td>4</td><td>7</td><td>3</td><td>14</td></tr>
+          <tr><td>6</td><td>6</td><td>5</td><td>8</td><td>3</td><td>16</td></tr>
+          <tr><td>7</td><td>7</td><td>6</td><td>9</td><td>4</td><td>18</td></tr>
+        </tbody>
+      </table>
+      <p class="rec-note">Recommended level = average party level ÷ 2, rounded up.</p>
+    </div>
+  </div>
+
+</div><!-- /tab-movement -->
+
+</main>
+
+<script>
+(function () {
+  const btns   = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  function activate(id) {
+    btns.forEach(b => {
+      const active = b.getAttribute('aria-controls') === id;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active);
+    });
+    panels.forEach(p => {
+      const active = p.id === id;
+      p.classList.toggle('active', active);
+    });
+    sessionStorage.setItem('fh-tab', id);
+  }
+
+  btns.forEach(b => b.addEventListener('click', () => activate(b.getAttribute('aria-controls'))));
+
+  // Restore last tab
+  const saved = sessionStorage.getItem('fh-tab');
+  if (saved && document.getElementById(saved)) activate(saved);
+})();
+</script>
+</body>
+</html>
