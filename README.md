@@ -1,7 +1,7 @@
 # frosthaven-reference.github.io
 Quick Reference Guide for stuff we are ALWAYS forgetting.
 
-This will probably evolve over time
+This will probably evolve over time: https://frosthaven-reference.github.io/
 
 Icons from Gloomhaven Secretariate. It's a great tool we use for our games!
 
