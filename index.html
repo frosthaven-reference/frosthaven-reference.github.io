@@ -849,7 +849,7 @@ main { padding: 16px 12px 48px; }
     </div>
     <div class="card-body">
       <p>A <strong>spent</strong> card is placed face-down in your spent pile. Spent cards are returned to your hand when you take a <strong>short rest</strong> (with one card randomly lost) or a <strong>long rest</strong>.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Items with a spent icon are flipped to their inactive side when used and refreshed on a long rest. <em>(p. 38)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Items with a spent icon are <em>rotated sideways</em> when used. They are recovered the next time you perform a long rest. <em>(p. 36)</em></span></div>
     </div>
   </div>
 
@@ -885,21 +885,33 @@ main { padding: 16px 12px 48px; }
 
   <h2 class="section-header">Item usage</h2>
 
-  <!-- FLIP / REFRESH -->
+  <!-- FLIP -->
   <div class="card">
     <div class="card-header">
-      <div style="display:flex;gap:6px;flex-shrink:0">
-        <img src="assets/icons/flip.svg" class="badge-img" alt="Flip icon">
-        <img src="assets/icons/refresh.svg" class="badge-img" alt="Refresh icon">
-      </div>
+      <img src="assets/icons/flip.svg" class="badge-img" alt="Flip icon">
       <div class="card-meta">
-        <div class="card-title">Flip &amp; Refresh</div>
+        <div class="card-title">Flip</div>
         <span class="card-sub">Item usage</span>
       </div>
     </div>
     <div class="card-body">
-      <p>Items with a <strong>flip</strong> icon are turned to their inactive side when used and must be <strong>refreshed</strong> before they can be used again. The refresh trigger varies by item — some refresh each round, others only on a long rest.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>A flipped item cannot be used. Check the item's refresh icon to know when it becomes available again. <em>(p. 35)</em></span></div>
+      <p>Items with a <strong>flip</strong> icon are flipped after use, revealing a different use on the other side. When that other side is then used, the item flips back to its front — ready to use again. The specific timing of when to use the back side is detailed in the card's text.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Characters should always start a scenario with flip items on the side showing the gold or crafting cost. <em>(p. 36)</em></span></div>
+    </div>
+  </div>
+
+  <!-- REFRESH -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/refresh.svg" class="badge-img" alt="Refresh icon">
+      <div class="card-meta">
+        <div class="card-title">Refresh</div>
+        <span class="card-sub">Item usage</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Some items show a <strong>refresh</strong> icon indicating when they become available again after use. The refresh trigger varies by item — common triggers include the <strong>start of your next turn</strong>, the <strong>end of the round</strong>, or a <strong>long rest</strong>.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Check the refresh icon on each item card — a refreshed item is immediately available to use again. <em>(p. 36)</em></span></div>
     </div>
   </div>
 
