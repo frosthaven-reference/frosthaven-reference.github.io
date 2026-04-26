@@ -599,13 +599,11 @@ main { padding: 16px 12px 48px; }
   <div class="card">
     <div class="card-header">
       <svg class="badge-svg" viewBox="0 0 40 40" aria-label="Advantage & Disadvantage badge">
-        <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#c8a84b" stroke="#a07820" stroke-width="1.5"/>
-        <!-- two overlapping card rects -->
-        <rect x="8"  y="11" width="13" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
-        <rect x="15" y="9"  width="13" height="18" rx="2" fill="#c8a84b" stroke="white" stroke-width="1.8"/>
-        <!-- lines suggesting card face -->
-        <line x1="18" y1="14" x2="25" y2="14" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="18" y1="17" x2="25" y2="17" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- two overlapping landscape attack modifier cards -->
+        <rect x="3" y="10" width="24" height="16" rx="2" fill="none" stroke="#c8a84b" stroke-width="1.8"/>
+        <rect x="13" y="14" width="24" height="16" rx="2" fill="#c8a84b" stroke="#a07820" stroke-width="1.5"/>
+        <line x1="17" y1="19" x2="33" y2="19" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="17" y1="23" x2="33" y2="23" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
       <div class="card-meta">
         <div class="card-title">Advantage &amp; Disadvantage</div>
@@ -637,12 +635,7 @@ main { padding: 16px 12px 48px; }
   <!-- NULL CARD ×0 -->
   <div class="card">
     <div class="card-header">
-      <svg class="badge-svg" viewBox="0 0 40 40" aria-label="Null card badge">
-        <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#c0392b" stroke="#8a1a10" stroke-width="1.5"/>
-        <!-- X shape -->
-        <line x1="12" y1="12" x2="28" y2="28" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
-        <line x1="28" y1="12" x2="12" y2="28" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
-      </svg>
+      <img src="assets/icons/null.png" class="badge-img" alt="Null card icon">
       <div class="card-meta">
         <div class="card-title">Null Card (×0)</div>
         <span class="card-sub">Attack modifier rule</span>
@@ -657,10 +650,7 @@ main { padding: 16px 12px 48px; }
   <!-- CRIT CARD ×2 -->
   <div class="card">
     <div class="card-header">
-      <svg class="badge-svg" viewBox="0 0 40 40" aria-label="Crit card badge">
-        <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#c8a84b" stroke="#a07820" stroke-width="1.5"/>
-        <text x="20" y="26" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="Lato,sans-serif">×2</text>
-      </svg>
+      <img src="assets/icons/double.png" class="badge-img" alt="Double damage icon">
       <div class="card-meta">
         <div class="card-title">Crit Card (×2)</div>
         <span class="card-sub">Attack modifier rule</span>
@@ -699,8 +689,11 @@ main { padding: 16px 12px 48px; }
   <!-- SHIELD & PIERCE -->
   <div class="card">
     <div class="card-header">
-      <div class="badge-icon-wrap" style="background:#3a5a8a">
-        <img src="assets/icons/shield.svg" alt="Shield icon">
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <div class="badge-icon-wrap" style="background:#3a5a8a">
+          <img src="assets/icons/shield.svg" alt="Shield icon">
+        </div>
+        <img src="assets/icons/pierce.svg" class="badge-img" alt="Pierce icon">
       </div>
       <div class="card-meta">
         <div class="card-title">Shield &amp; Pierce</div>
@@ -743,12 +736,62 @@ main { padding: 16px 12px 48px; }
 
   <h2 class="section-header">Move &amp; Jump</h2>
 
-  <!-- MOVE & JUMP — text-only -->
+  <!-- MOVE & JUMP -->
   <div class="card">
+    <div class="card-header">
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <div class="badge-icon-wrap" style="background:#2a5a4a">
+          <img src="assets/icons/move.svg" alt="Move icon">
+        </div>
+        <div class="badge-icon-wrap" style="background:#2a5a4a">
+          <img src="assets/icons/jump.svg" alt="Jump icon">
+        </div>
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Move &amp; Jump</div>
+        <span class="card-sub">Movement rules</span>
+      </div>
+    </div>
     <div class="card-body">
       <p><strong>Move X</strong> allows you to move up to X hexes. Each hex entered costs 1 movement, except difficult terrain which costs 2.</p>
       <p><strong>Jump</strong> (as part of a Move ability) ignores all terrain and figures <em>along the path</em>. The final hex still costs 1 movement, still obeys occupancy rules, and still triggers hazardous terrain on landing.</p>
       <div class="callout"><span class="callout-icon">⚠</span><span>You cannot end your movement on an occupied hex — whether ally, enemy, or obstacle — unless it is an empty hex you can legally enter. <em>(p. 24)</em></span></div>
+    </div>
+  </div>
+
+  <!-- TELEPORT -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge-icon-wrap" style="background:#2a5a4a">
+        <img src="assets/icons/teleport.svg" alt="Teleport icon">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Teleport</div>
+        <span class="card-sub">Movement rules</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Teleport X</strong> places the figure on any empty hex within range X. No path is taken — walls, obstacles, terrain, and figures between origin and destination are all ignored.</p>
+      <p>Teleport is not movement. It is not prevented by Immobilize and does not trigger abilities that react to movement.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>No terrain effects apply along the way, but hazardous terrain on the <em>destination</em> hex still deals damage on arrival. <em>(p. 24)</em></span></div>
+    </div>
+  </div>
+
+  <!-- FLYING -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge-icon-wrap" style="background:#2a5a4a">
+        <img src="assets/icons/fly.svg" alt="Flying icon">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Flying</div>
+        <span class="card-sub">Movement rules</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Flying</strong> allows a figure to ignore all terrain costs and effects <em>along the path</em>, including difficult terrain, hazardous terrain, and obstacles. The figure may pass through hexes occupied by other figures.</p>
+      <p>The destination hex must still be empty, and hazardous terrain on the landing hex still deals damage.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Unlike Jump, Flying applies to the <em>entire</em> move — not just a single ability. It also avoids hazardous terrain damage on every hex passed through, not just the destination. <em>(p. 24)</em></span></div>
     </div>
   </div>
 
