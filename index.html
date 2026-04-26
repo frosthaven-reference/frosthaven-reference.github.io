@@ -47,6 +47,8 @@ body {
   max-width: 540px;
   margin: 0 auto;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Sticky shell ── */
@@ -114,7 +116,7 @@ body {
 }
 
 /* ── Main content ── */
-main { padding: 16px 12px 48px; }
+main { padding: 16px 12px 32px; flex: 1; }
 
 /* ── Section header ── */
 .section-header {
@@ -290,6 +292,44 @@ main { padding: 16px 12px 48px; }
   position: relative;
   top: -1px;
 }
+
+/* ── Footer ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: .78rem;
+}
+.kofi-btn {
+  font-family: 'Lato', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #fff;
+  background: #29abe0;
+  padding: 4px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+.kofi-btn:hover { opacity: .85; }
+.footer-sep {
+  color: var(--border);
+  user-select: none;
+}
+.footer-link {
+  font-family: 'Lato', sans-serif;
+  font-size: .78rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .15s;
+}
+.footer-link:hover { color: var(--text-sec); }
 </style>
 </head>
 <body>
@@ -663,29 +703,6 @@ main { padding: 16px 12px 48px; }
     </div>
   </div>
 
-  <h2 class="section-header">Attack effect timing</h2>
-
-  <!-- ATTACK EFFECT TIMING — text-only with table -->
-  <div class="card">
-    <div class="card-body">
-      <p>Attack effects are applied in a specific order relative to the damage roll. Effects that say "on this attack" apply when listed below:</p>
-      <table class="ref-table">
-        <thead>
-          <tr><th>Effect</th><th>When applied</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>+X Attack</td><td>During damage calculation</td></tr>
-          <tr><td>Pierce X</td><td>During damage calculation</td></tr>
-          <tr><td>Conditions (Wound, etc.)</td><td>After damage resolves</td></tr>
-          <tr><td>Push X / Pull X</td><td>After damage resolves</td></tr>
-          <tr><td>+X Target</td><td>After attack resolves (next target)</td></tr>
-          <tr><td>Elemental infuse</td><td>End of your turn</td></tr>
-        </tbody>
-      </table>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Attack effects (conditions, Push/Pull) apply <em>even if the attack deals 0 damage</em> after shields — unless a ×0 null card was drawn. <em>(p. 26)</em></span></div>
-    </div>
-  </div>
-
   <h2 class="section-header">Shield &amp; Pierce</h2>
 
   <!-- SHIELD & PIERCE -->
@@ -728,6 +745,29 @@ main { padding: 16px 12px 48px; }
     </div>
   </div>
 
+  <h2 class="section-header">Attack effect timing</h2>
+
+  <!-- ATTACK EFFECT TIMING — text-only with table -->
+  <div class="card">
+    <div class="card-body">
+      <p>Attack effects are applied in a specific order relative to the damage roll. Effects that say "on this attack" apply when listed below:</p>
+      <table class="ref-table">
+        <thead>
+          <tr><th>Effect</th><th>When applied</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>+X Attack</td><td>During damage calculation</td></tr>
+          <tr><td>Pierce X</td><td>During damage calculation</td></tr>
+          <tr><td>Conditions (Wound, etc.)</td><td>After damage resolves</td></tr>
+          <tr><td>Push X / Pull X</td><td>After damage resolves</td></tr>
+          <tr><td>+X Target</td><td>After attack resolves (next target)</td></tr>
+          <tr><td>Elemental infuse</td><td>End of your turn</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Attack effects (conditions, Push/Pull) apply <em>even if the attack deals 0 damage</em> after shields — unless a ×0 null card was drawn. <em>(p. 26)</em></span></div>
+    </div>
+  </div>
+
 </div><!-- /tab-attack -->
 
 
@@ -735,6 +775,31 @@ main { padding: 16px 12px 48px; }
      MOVEMENT TAB
 ───────────────────────────────────────── -->
 <div id="tab-movement" class="tab-panel" role="tabpanel" aria-labelledby="btn-movement">
+
+  <h2 class="section-header">Push &amp; Pull</h2>
+
+  <!-- PUSH & PULL -->
+  <div class="card">
+    <div class="card-header">
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <div class="badge-icon-wrap" style="background:#2a5a4a">
+          <img src="assets/icons/push.svg" alt="Push icon" style="filter:none">
+        </div>
+        <div class="badge-icon-wrap" style="background:#2a5a4a">
+          <img src="assets/icons/pull.svg" alt="Pull icon" style="filter:none">
+        </div>
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Push &amp; Pull</div>
+        <span class="card-sub">Forced movement</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Push X</strong> forces the target to move up to X hexes, with each hex moving the target <em>farther away</em> from the source. <strong>Pull X</strong> moves the target up to X hexes <em>closer</em>. The attacker chooses the path.</p>
+      <p>Forced movement triggers hazardous terrain on each hex entered. The pushed/pulled figure can be moved through friendly figures, but not through enemies or obstacles.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Forced movement does <em>not</em> cost extra for difficult terrain — it ignores movement point costs entirely. It can also be used to move a figure onto a hazardous hex intentionally. <em>(p. 32)</em></span></div>
+    </div>
+  </div>
 
   <h2 class="section-header">Move &amp; Jump</h2>
 
@@ -817,17 +882,6 @@ main { padding: 16px 12px 48px; }
     </div>
   </div>
 
-  <h2 class="section-header">Push &amp; Pull</h2>
-
-  <!-- PUSH & PULL — text-only -->
-  <div class="card">
-    <div class="card-body">
-      <p><strong>Push X</strong> forces the target to move up to X hexes, with each hex moving the target <em>farther away</em> from the source. <strong>Pull X</strong> moves the target up to X hexes <em>closer</em>. The attacker chooses the path.</p>
-      <p>Forced movement triggers hazardous terrain on each hex entered. The pushed/pulled figure can be moved through friendly figures, but not through enemies or obstacles.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Forced movement does <em>not</em> cost extra for difficult terrain — it ignores movement point costs entirely. It can also be used to move a figure onto a hazardous hex intentionally. <em>(p. 32)</em></span></div>
-    </div>
-  </div>
-
 </div><!-- /tab-movement -->
 
 
@@ -837,21 +891,6 @@ main { padding: 16px 12px 48px; }
 <div id="tab-cards" class="tab-panel" role="tabpanel" aria-labelledby="btn-cards">
 
   <h2 class="section-header">Card use</h2>
-
-  <!-- SPENT -->
-  <div class="card">
-    <div class="card-header">
-      <img src="assets/icons/spent.svg" class="badge-img" alt="Spent icon">
-      <div class="card-meta">
-        <div class="card-title">Spent</div>
-        <span class="card-sub">Card usage</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <p>A <strong>spent</strong> card is placed face-down in your spent pile. Spent cards are returned to your hand when you take a <strong>short rest</strong> (with one card randomly lost) or a <strong>long rest</strong>.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Items with a spent icon are <em>rotated sideways</em> when used. They are recovered the next time you perform a long rest. <em>(p. 36)</em></span></div>
-    </div>
-  </div>
 
   <!-- LOST -->
   <div class="card">
@@ -883,20 +922,33 @@ main { padding: 16px 12px 48px; }
     </div>
   </div>
 
-  <h2 class="section-header">Item usage</h2>
-
-  <!-- FLIP -->
+  <!-- RECOVER -->
   <div class="card">
     <div class="card-header">
-      <img src="assets/icons/flip.svg" class="badge-img" alt="Flip icon">
+      <img src="assets/icons/recover.svg" class="badge-img" alt="Recover icon">
       <div class="card-meta">
-        <div class="card-title">Flip</div>
-        <span class="card-sub">Item usage</span>
+        <div class="card-title">Recover</div>
+        <span class="card-sub">Card usage</span>
       </div>
     </div>
     <div class="card-body">
-      <p>Items with a <strong>flip</strong> icon are flipped after use, revealing a different use on the other side. When that other side is then used, the item flips back to its front — ready to use again. The specific timing of when to use the back side is detailed in the card's text.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Characters should always start a scenario with flip items on the side showing the gold or crafting cost. <em>(p. 36)</em></span></div>
+      <p>A <strong>Recover</strong> ability lets you take one or more lost cards from your lost pile and return them to your hand or spent pile (as specified). This is the only way to get lost cards back mid-scenario.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Recover does <em>not</em> apply to cards discarded by resting — only to cards in your lost pile. <em>(p. 38)</em></span></div>
+    </div>
+  </div>
+
+  <!-- SPENT -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/spent.svg" class="badge-img" alt="Spent icon">
+      <div class="card-meta">
+        <div class="card-title">Spent</div>
+        <span class="card-sub">Card usage</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>A <strong>spent</strong> card is placed face-down in your spent pile. Spent cards are returned to your hand when you take a <strong>short rest</strong> (with one card randomly lost) or a <strong>long rest</strong>.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Items with a spent icon are <em>rotated sideways</em> when used. They are recovered the next time you perform a long rest. <em>(p. 36)</em></span></div>
     </div>
   </div>
 
@@ -915,18 +967,18 @@ main { padding: 16px 12px 48px; }
     </div>
   </div>
 
-  <!-- RECOVER -->
+  <!-- FLIP -->
   <div class="card">
     <div class="card-header">
-      <img src="assets/icons/recover.svg" class="badge-img" alt="Recover icon">
+      <img src="assets/icons/flip.svg" class="badge-img" alt="Flip icon">
       <div class="card-meta">
-        <div class="card-title">Recover</div>
-        <span class="card-sub">Card usage</span>
+        <div class="card-title">Flip</div>
+        <span class="card-sub">Item usage</span>
       </div>
     </div>
     <div class="card-body">
-      <p>A <strong>Recover</strong> ability lets you take one or more lost cards from your lost pile and return them to your hand or spent pile (as specified). This is the only way to get lost cards back mid-scenario.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Recover does <em>not</em> apply to cards discarded by resting — only to cards in your lost pile. <em>(p. 38)</em></span></div>
+      <p>Items with a <strong>flip</strong> icon are flipped after use, revealing a different use on the other side. When that other side is then used, the item flips back to its front — ready to use again. The specific timing of when to use the back side is detailed in the card's text.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Characters should always start a scenario with flip items on the side showing the gold or crafting cost. <em>(p. 36)</em></span></div>
     </div>
   </div>
 
@@ -934,6 +986,12 @@ main { padding: 16px 12px 48px; }
 
 
 </main>
+
+<footer class="site-footer">
+  <a href="https://ko-fi.com/B0B717I6U" class="kofi-btn" target="_blank" rel="noreferrer">☕ Support on Ko-fi</a>
+  <span class="footer-sep">|</span><a href="https://github.com/frosthaven-reference/frosthaven-reference.github.io" class="footer-link" target="_blank" rel="noreferrer">Source Code</a>
+  <span class="footer-sep">|</span><a href="https://github.com/frosthaven-reference/frosthaven-reference.github.io/issues" class="footer-link" target="_blank" rel="noreferrer">File a Bug</a>
+</footer>
 
 <script>
 (function () {
