@@ -747,8 +747,12 @@ main { padding: 16px 12px 32px; flex: 1; }
   <div class="card">
     <div class="card-header">
       <div style="display:flex;gap:6px;flex-shrink:0">
-        <img src="assets/icons/attack.svg" class="badge-img" alt="Attack icon" style="filter:invert(1)">
-        <img src="assets/icons/move.svg" class="badge-img" alt="Move icon" style="filter:invert(1)">
+        <div class="badge-icon-wrap" style="background:#2a5a4a">
+          <img src="assets/icons/attack.svg" alt="Attack icon">
+        </div>
+        <div class="badge-icon-wrap" style="background:#2a5a4a">
+          <img src="assets/icons/move.svg" alt="Move icon">
+        </div>
       </div>
       <div class="card-meta">
         <div class="card-title">Commanding Figures</div>
@@ -884,7 +888,9 @@ main { padding: 16px 12px 32px; flex: 1; }
   <!-- LOOT -->
   <div class="card">
     <div class="card-header">
-      <img src="assets/icons/loot.svg" class="badge-img" alt="Loot icon">
+      <div class="badge-icon-wrap" style="background:#2a5a4a">
+        <img src="assets/icons/loot.svg" alt="Loot icon">
+      </div>
       <div class="card-meta">
         <div class="card-title">Loot</div>
         <span class="card-sub">Movement rules</span>
@@ -927,7 +933,7 @@ main { padding: 16px 12px 32px; flex: 1; }
   <!-- LOST -->
   <div class="card">
     <div class="card-header">
-      <img src="assets/icons/lost.svg" class="badge-img" alt="Lost icon" style="width:43px;height:43px">
+      <img src="assets/icons/lost.svg" class="badge-img" alt="Lost icon" style="width:39px;height:39px">
       <div class="card-meta">
         <div class="card-title">Lost</div>
         <span class="card-sub">Card usage</span>
