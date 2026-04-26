@@ -593,7 +593,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p><strong>Heal 1 HP</strong> at the start of each of your turns. Regenerate is removed when the figure suffers damage — not at end of turn.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>If a figure has Regenerate and Wound/Poison can be active simultaneously, regenerate heals first removing the negative conditions. <em>(p. 28)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>If a figure has Regenerate and Wound/Poison can be active simultaneously, regenerate heals first thus removing the negative conditions before they take effect. <em>(p. 28)</em></span></div>
     </div>
   </div>
 
@@ -743,6 +743,26 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
   </div>
 
+  <!-- COMMANDING FIGURES -->
+  <div class="card">
+    <div class="card-header">
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <img src="assets/icons/attack.svg" class="badge-img" alt="Attack icon" style="filter:invert(1)">
+        <img src="assets/icons/move.svg" class="badge-img" alt="Move icon" style="filter:invert(1)">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Commanding Figures</div>
+        <span class="card-sub">Off Turn Action Abilities</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>A figure can be commanded to perform an <img src="assets/icons/attack.svg" class="icon-inline" alt="Attack" style="filter:invert(1)"> <strong>X</strong> or <img src="assets/icons/move.svg" class="icon-inline" alt="Move" style="filter:invert(1)"> <strong>X</strong> ability, even if they have no attack or move stat value (e.g., you can have the Banner of Hope move or wallop an enemy).</p>
+      <p>However, a figure cannot be commanded to perform an <img src="assets/icons/attack.svg" class="icon-inline" alt="Attack" style="filter:invert(1)"> <strong>± X</strong> or <img src="assets/icons/move.svg" class="icon-inline" alt="Move" style="filter:invert(1)"> <strong>± X</strong> ability if they have no attack or move stat value.</p>
+      <p>A commanded figure retains all of their persistent bonuses and special traits and the commanded ability is not considered a separate turn.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>The commanding figure rules are complicated, so you should reference the manual for additional details. <em>p. 33</em></span></div>
+    </div>
+  </div>
+
   <h2 class="section-header">Attack effect timing</h2>
 
   <!-- ATTACK EFFECT TIMING — text-only with table -->
@@ -861,6 +881,20 @@ main { padding: 16px 12px 32px; flex: 1; }
 	</div>
   </div>
 
+  <!-- LOOT -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/loot.svg" class="badge-img" alt="Loot icon">
+      <div class="card-meta">
+        <div class="card-title">Loot</div>
+        <span class="card-sub">Movement rules</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Loot X</strong> allows a figure to loot up to X adjacent or occupied hex(es). Looting picks up all loot tokens on the targeted hexes. This ability is unaffected by the presence of figures or overlay tiles. <em>p. 32</em></p>
+     </div>
+  </div>
+
   <h2 class="section-header">Terrain types</h2>
 
   <!-- TERRAIN — text-only with table -->
@@ -923,7 +957,7 @@ main { padding: 16px 12px 32px; flex: 1; }
   <!-- ROUND BONUS -->
   <div class="card">
     <div class="card-header">
-      <img src="assets/icons/round.svg" class="badge-img" alt="Round bonus icon">
+      <img src="assets/icons/round.svg" class="badge-img" alt="Round bonus icon" style="width:53px;height:53px">
       <div class="card-meta">
         <div class="card-title">Round Bonus</div>
         <span class="card-sub">Card usage</span>
