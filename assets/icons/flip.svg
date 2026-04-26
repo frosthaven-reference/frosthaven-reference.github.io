@@ -162,7 +162,8 @@
      data-name="Layer 2">
     <g
        id="Layer_1-2"
-       data-name="Layer 1">
+       data-name="Layer 1"
+       style="fill:#ffffff">
       <g
          class="cls-4"
          mask="url(#mask)"
