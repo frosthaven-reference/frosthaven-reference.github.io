@@ -333,6 +333,7 @@ main { padding: 16px 12px 48px; }
     <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-conditions" id="btn-conditions">Conditions</button>
     <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-attack"     id="btn-attack">Attack</button>
     <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-movement"   id="btn-movement">Movement</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-cards"      id="btn-cards">Cards</button>
   </nav>
 </div><!-- /sticky-top -->
 
@@ -658,6 +659,7 @@ main { padding: 16px 12px 48px; }
     </div>
     <div class="card-body">
       <p>Deal <strong>double damage</strong>. The modifier deck is reshuffled immediately after this card is drawn. <em>(p. 25)</em></p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>All modifiers (bonuses, penalties, rolling effects) are <em>added first</em>, then the total is multiplied by 2. <em>(p. 25)</em></span></div>
     </div>
   </div>
 
@@ -826,38 +828,98 @@ main { padding: 16px 12px 48px; }
     </div>
   </div>
 
-  <h2 class="section-header">Scenario level reference</h2>
+</div><!-- /tab-movement -->
 
-  <!-- LEVEL TABLE -->
+
+<!-- ─────────────────────────────────────────
+     CARDS TAB
+───────────────────────────────────────── -->
+<div id="tab-cards" class="tab-panel" role="tabpanel" aria-labelledby="btn-cards">
+
+  <h2 class="section-header">Card use</h2>
+
+  <!-- SPENT -->
   <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/spent.svg" class="badge-img" alt="Spent icon">
+      <div class="card-meta">
+        <div class="card-title">Spent</div>
+        <span class="card-sub">Card usage</span>
+      </div>
+    </div>
     <div class="card-body">
-      <table class="level-table">
-        <thead>
-          <tr>
-            <th>Lvl</th>
-            <th>Monster<br>level</th>
-            <th>Gold<br>conv.</th>
-            <th>Trap<br>dmg</th>
-            <th>Hazard<br>dmg</th>
-            <th>XP<br>bonus</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>0</td><td>0</td><td>2</td><td>2</td><td>1</td><td>4</td></tr>
-          <tr><td>1</td><td>1</td><td>2</td><td>3</td><td>2</td><td>6</td></tr>
-          <tr><td>2</td><td>2</td><td>3</td><td>4</td><td>2</td><td>8</td></tr>
-          <tr><td>3</td><td>3</td><td>3</td><td>5</td><td>2</td><td>10</td></tr>
-          <tr><td>4</td><td>4</td><td>4</td><td>6</td><td>3</td><td>12</td></tr>
-          <tr><td>5</td><td>5</td><td>4</td><td>7</td><td>3</td><td>14</td></tr>
-          <tr><td>6</td><td>6</td><td>5</td><td>8</td><td>3</td><td>16</td></tr>
-          <tr><td>7</td><td>7</td><td>6</td><td>9</td><td>4</td><td>18</td></tr>
-        </tbody>
-      </table>
-      <p class="rec-note">Recommended level = average party level ÷ 2, rounded up.</p>
+      <p>A <strong>spent</strong> card is placed face-down in your spent pile. Spent cards are returned to your hand when you take a <strong>short rest</strong> (with one card randomly lost) or a <strong>long rest</strong>.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Items with a spent icon are flipped to their inactive side when used and refreshed on a long rest. <em>(p. 38)</em></span></div>
     </div>
   </div>
 
-</div><!-- /tab-movement -->
+  <!-- LOST -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/lost.svg" class="badge-img" alt="Lost icon">
+      <div class="card-meta">
+        <div class="card-title">Lost</div>
+        <span class="card-sub">Card usage</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>A <strong>lost</strong> card is removed from play for the rest of the scenario. Lost cards cannot be recovered by resting — only by a specific <strong>Recover</strong> ability.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>The <img src="assets/icons/loss.svg" style="height:1em;vertical-align:middle"> icon on an ability means that card is lost when the ability is used, whether on the top or bottom action. <em>(p. 38)</em></span></div>
+    </div>
+  </div>
+
+  <!-- PERSISTENT -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/permanent.svg" class="badge-img" alt="Persistent icon">
+      <div class="card-meta">
+        <div class="card-title">Persistent</div>
+        <span class="card-sub">Card usage</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>A <strong>persistent</strong> ability stays in your active area and provides an ongoing effect. Place the card in front of you and track charges with a token. When all charges are used, the card is lost.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>You may choose to end a persistent ability early (before charges run out) and lose the card at any time during your turn. <em>(p. 38)</em></span></div>
+    </div>
+  </div>
+
+  <h2 class="section-header">Item usage</h2>
+
+  <!-- FLIP / REFRESH -->
+  <div class="card">
+    <div class="card-header">
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <img src="assets/icons/flip.svg" class="badge-img" alt="Flip icon">
+        <img src="assets/icons/refresh.svg" class="badge-img" alt="Refresh icon">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Flip &amp; Refresh</div>
+        <span class="card-sub">Item usage</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Items with a <strong>flip</strong> icon are turned to their inactive side when used and must be <strong>refreshed</strong> before they can be used again. The refresh trigger varies by item — some refresh each round, others only on a long rest.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>A flipped item cannot be used. Check the item's refresh icon to know when it becomes available again. <em>(p. 35)</em></span></div>
+    </div>
+  </div>
+
+  <!-- RECOVER -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/recover.svg" class="badge-img" alt="Recover icon">
+      <div class="card-meta">
+        <div class="card-title">Recover</div>
+        <span class="card-sub">Card usage</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>A <strong>Recover</strong> ability lets you take one or more lost cards from your lost pile and return them to your hand or spent pile (as specified). This is the only way to get lost cards back mid-scenario.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Recover does <em>not</em> apply to cards discarded by resting — only to cards in your lost pile. <em>(p. 38)</em></span></div>
+    </div>
+  </div>
+
+</div><!-- /tab-cards -->
+
 
 </main>
 
