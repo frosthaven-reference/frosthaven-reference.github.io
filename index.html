@@ -400,7 +400,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Suffer <strong>10 damage</strong> at the end of your next turn — unless you are healed before it triggers. Any heal applied before the end of that turn removes Bane and prevents the damage entirely.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>The heal does <em>not</em> have to restore you to full HP. Even a 1 HP heal removes Bane before it fires. <em>(p. 29)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>The heal does <em>not</em> have to restore HP — even a <strong>Heal 0</strong> (however, rare) would remove Bane.<em> (p. 29)</em></span></div>
     </div>
   </div>
 
@@ -414,8 +414,8 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>Cannot <strong>move</strong> voluntarily. The figure may still perform all other actions normally.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span><em>Forced</em> movement (Push, Pull, or other move effects applied by another figure) still works normally — Immobilize only prevents self-directed movement. <em>(p. 28)</em></span></div>
+      <p>Cannot <strong>move</strong> voluntarily. The figure may still perform all other actions normally, however.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span><strong>Push, Pull, and Teleport</strong> still work normally — they are not move abilities. However, <strong>Controlled</strong> and <strong>Granted</strong> movement are prevented: both are move abilities, and Immobilize stops you from performing move abilities entirely. <em>(p. 28)</em></span></div>
     </div>
   </div>
 
@@ -532,7 +532,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Shuffle a <strong>×0 null card</strong> into your attack modifier deck. Curse is consumed when the null card is drawn — it is <em>not</em> a standard end-of-turn condition.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Curses add multiple ×0 cards. You can have up to 10 curse cards in your deck at once. <em>(p. 29)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Curses add multiple ×0 cards. You can have up to 10 curse cards in your deck at once. This number is shared across players and, similarly, monsters. <em>(p. 29)</em></span></div>
     </div>
   </div>
 
@@ -578,7 +578,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Cannot be <strong>targeted</strong> by any enemy ability. Enemies act as if you are not there when choosing targets.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Invisible does <em>not</em> prevent AoE damage. If an AoE ability covers your hex, you still suffer the effect — you just can't be the chosen primary target. <em>(p. 28)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Invisible prevents all enemy targeting, including AOE, but not non-targeted damage. <em>(p. 28)</em></span></div>
     </div>
   </div>
 
@@ -593,7 +593,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p><strong>Heal 1 HP</strong> at the start of each of your turns. Regenerate is removed when the figure suffers damage — not at end of turn.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Regenerate and Wound/Poison can be active simultaneously. Wound/Poison damage at start of turn will remove Regenerate, so you'd take the damage without the heal that round. <em>(p. 28)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>If a figure has Regenerate and Wound/Poison can be active simultaneously, regenerate heals first removing the negative condition<em>(p. 28)</em></span></div>
     </div>
   </div>
 
@@ -682,7 +682,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>Deal <strong>0 damage</strong>. The modifier deck is reshuffled immediately after this card is drawn. Attack effects (conditions, Push, Pull, etc.) still apply normally.</p>
+      <p>Deal <strong>0 damage</strong>. The modifier deck is reshuffled at the end of the players turn. Attack effects (conditions, Push, Pull, etc.) still apply normally.</p>
       <div class="callout"><span class="callout-icon">⚠</span><span>A ×0 only nullifies the <em>damage</em> — attack effects like conditions and forced movement still trigger. <em>(p. 26)</em></span></div>
     </div>
   </div>
@@ -697,7 +697,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>Deal <strong>double damage</strong>. The modifier deck is reshuffled immediately after this card is drawn. <em>(p. 25)</em></p>
+      <p>Deal <strong>double damage</strong>. The modifier deck is reshuffled at the end of the players turn. <em>(p. 25)</em></p>
       <div class="callout"><span class="callout-icon">⚠</span><span>All modifiers (bonuses, penalties, rolling effects) are <em>added first</em>, then the total is multiplied by 2. <em>(p. 25)</em></span></div>
     </div>
   </div>
@@ -720,8 +720,8 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p><strong>Shield X</strong> reduces incoming attack damage by X for each separate attack. Shield applies after the attack modifier is resolved but before effects like Brittle or Ward.</p>
-      <p><strong>Pierce X</strong> ignores X points of a target's Shield on this attack. Multiple Pierce effects stack.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Shield does <em>not</em> reduce damage from traps, hazardous terrain, Wound, Poison, Bane, or any condition. It only applies to standard attack damage. <em>(p. 31)</em></span></div>
+      <p><strong>Pierce X</strong> reduces X points of a target's Shield on this attack. Multiple Pierce effects stack.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Shield does <em>not</em> reduce damage from traps, hazardous terrain, Wound, Poison, Bane, Retaliate, or any condition. It only applies to standard attack damage. <em>(p. 31)</em></span></div>
     </div>
   </div>
 
@@ -763,7 +763,7 @@ main { padding: 16px 12px 32px; flex: 1; }
           <tr><td>Elemental infuse</td><td>End of your turn</td></tr>
         </tbody>
       </table>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Attack effects (conditions, Push/Pull) apply <em>even if the attack deals 0 damage</em> after shields — unless a ×0 null card was drawn. <em>(p. 26)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Attack effects (conditions, Push/Pull) apply <em>even if the attack deals 0 damage</em> after shields — even if a ×0 null card was drawn. <em>(p. 26)</em></span></div>
     </div>
   </div>
 
@@ -821,7 +821,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     <div class="card-body">
       <p><strong>Move X</strong> allows you to move up to X hexes. Each hex entered costs 1 movement, except difficult terrain which costs 2.</p>
       <p><strong>Jump</strong> (as part of a Move ability) ignores all terrain and figures <em>along the path</em>. The final hex still costs 1 movement, still obeys occupancy rules, and still triggers hazardous terrain on landing.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>You cannot end your movement on an occupied hex — whether ally, enemy, or obstacle — unless it is an empty hex you can legally enter. <em>(p. 24)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>You cannot end your movement on an occupied hex — whether ally, enemy, or obstacle.<em>(p. 24)</em></span></div>
     </div>
   </div>
 
@@ -856,8 +856,8 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p><strong>Flying</strong> allows a figure to ignore all terrain costs and effects <em>along the path</em>, including difficult terrain, hazardous terrain, and obstacles. The figure may pass through hexes occupied by other figures.</p>
-      <p>The destination hex must still be empty, and hazardous terrain on the landing hex still deals damage.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Unlike Jump, Flying applies to the <em>entire</em> move — not just a single ability. It also avoids hazardous terrain damage on every hex passed through, not just the destination. <em>(p. 24)</em></span></div>
+      <p>The destination hex must still be empty, and hazardous terrain the figure ends on does not deal damage.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Unlike Jump, Flying applies is an active bonus — not just applying to single move ability.<em> (p. 24)</em></span></div>
     </div>
   </div>
 
@@ -877,8 +877,7 @@ main { padding: 16px 12px 32px; flex: 1; }
           <tr><td>Walls</td><td>Block movement and line-of-sight</td></tr>
         </tbody>
       </table>
-      <div class="callout"><span class="callout-icon">⚠</span><span><strong>Flying</strong> skips difficult terrain costs <em>and</em> avoids hazardous terrain damage entirely, including on the landing hex. <strong>Jumping</strong> skips difficult terrain costs but still takes hazardous terrain damage on the landing hex. <em>(p. 24)</em></span></div>
-    </div>
+     </div>
   </div>
 
 </div><!-- /tab-movement -->
@@ -902,7 +901,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>A <strong>lost</strong> card is removed from play for the rest of the scenario. Lost cards cannot be recovered by resting — only by a specific <strong>Recover</strong> ability.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>The <img src="assets/icons/loss.svg" style="height:1em;vertical-align:middle"> icon on an ability means that card is lost when the ability is used, whether on the top or bottom action. <em>(p. 38)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>The <img src="assets/icons/loss.svg" style="height:1em;vertical-align:middle"> icon on an ability means that card is lost when the ability is used and cannot be recovered by any means until end of the scenario. <em>(p. 38)</em></span></div>
     </div>
   </div>
 
@@ -916,8 +915,8 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>A <strong>persistent</strong> ability stays in your active area and provides an ongoing effect. Place the card in front of you and track charges with a token. When all charges are used, the card is lost.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>You may choose to end a persistent ability early (before charges run out) and lose the card at any time during your turn. <em>(p. 38)</em></span></div>
+      <p>A <strong>persistent</strong> bonus activate when the ability is performed and expire when the specified removal condition has been fulfilled.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>You may choose to end a persistent ability at any time. <em>(p. 38)</em></span></div>
     </div>
   </div>
 
@@ -931,8 +930,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>A <strong>Recover</strong> ability lets you take one or more lost cards from your lost pile and return them to your hand or spent pile (as specified). This is the only way to get lost cards back mid-scenario.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Recover does <em>not</em> apply to cards discarded by resting — only to cards in your lost pile. <em>(p. 38)</em></span></div>
+      <p>A <strong>Recover</strong> allows a character to recover discarded or lost ability cards (as specified by the ability). <em>p. 33</em></p>
     </div>
   </div>
 
@@ -946,8 +944,8 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>A <strong>spent</strong> card is placed face-down in your spent pile. Spent cards are returned to your hand when you take a <strong>short rest</strong> (with one card randomly lost) or a <strong>long rest</strong>.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Items with a spent icon are <em>rotated sideways</em> when used. They are recovered the next time you perform a long rest. <em>(p. 36)</em></span></div>
+      <p>A <strong>spent</strong> card  The spent icon means the item is spent after use. This is indicated by rotating the card sideways. </strong>.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Spent items can be recovered the next time you perform a long rest. <em>(p. 36)</em></span></div>
     </div>
   </div>
 
@@ -962,7 +960,6 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Some items show a <strong>refresh</strong> icon indicating when they become available again after use. The refresh trigger varies by item — common triggers include the <strong>start of your next turn</strong>, the <strong>end of the round</strong>, or a <strong>long rest</strong>.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Check the refresh icon on each item card — a refreshed item is immediately available to use again. <em>(p. 36)</em></span></div>
     </div>
   </div>
 
@@ -976,8 +973,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>Items with a <strong>flip</strong> icon are flipped after use, revealing a different use on the other side. When that other side is then used, the item flips back to its front — ready to use again. The specific timing of when to use the back side is detailed in the card's text.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Characters should always start a scenario with flip items on the side showing the gold or crafting cost. <em>(p. 36)</em></span></div>
+      <p>Items with a <strong>flip</strong> icon are flipped after use, revealing a different use on the other side of the card. When the other side is used, the item is then flipped over back to its front side to be used again.</p>
     </div>
   </div>
 
