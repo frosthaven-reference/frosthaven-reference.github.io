@@ -415,7 +415,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Cannot <strong>move</strong> voluntarily. The figure may still perform all other actions normally, however.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span><strong>Push, Pull, and Teleport</strong> still work normally — they are not move abilities. However, <strong>Controlled</strong> and <strong>Granted</strong> movement are prevented: both are move abilities, and Immobilize stops you from performing move abilities entirely. <em>(p. 28)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span><strong>Push, Pull, and Teleport</strong> still work normally — they are not move abilities. However, <strong>Controlled</strong> and <strong>Granted</strong> movement are prevented: both are move abilities, and Immobilize stops you from performing move abilities entirely.<em> (p. 28)</em></span></div>
     </div>
   </div>
 
@@ -532,7 +532,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Shuffle a <strong>×0 null card</strong> into your attack modifier deck. Curse is consumed when the null card is drawn — it is <em>not</em> a standard end-of-turn condition.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Curses add multiple ×0 cards. Monster decks are limited to 10 curse cards each. The player curse limit is 10 cards <em>total shared across all players</em> — not 10 per player deck. <em>(p. 29)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Curses add multiple ×0 cards. You can have up to 10 curse cards in your deck at once. This number is shared across players and, similarly, monsters. <em>(p. 29)</em></span></div>
     </div>
   </div>
 
@@ -549,7 +549,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Shuffle a <strong>×2 crit card</strong> into your attack modifier deck. Bless is consumed when the ×2 card is drawn — it is <em>not</em> a standard end-of-turn condition.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Blesses add multiple ×2 cards. The bless limit is <strong>15 cards total shared across all player decks</strong> — a single deck may hold more than 10. <em>(p. 29)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Multiple Blesses add multiple ×2 cards. You can have up to 10 bless cards in your deck at once. This number is shared across players and, similarly, monsters. <em>(p. 29)</em></span></div>
     </div>
   </div>
 
@@ -578,7 +578,7 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p>Cannot be <strong>targeted</strong> by any enemy ability. Enemies act as if you are not there when choosing targets.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Invisible prevents <em>all</em> enemy targeting — including red hex patterns and AoE abilities, which are simply ways of targeting. An invisible figure in a red hex or AoE still cannot be targeted. Invisible only fails to protect against <strong>non-targeted</strong> effects like "Suffer X damage" abilities, which require no target. <em>(p. 28)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Invisible prevents all enemy targeting, including AOE, but not non-targeted damage. <em>(p. 28)</em></span></div>
     </div>
   </div>
 
@@ -592,8 +592,8 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p><strong>Heal 1 HP</strong> and <strong>remove all negative conditions</strong> (Wound, Poison, etc.) at the start of each of your turns. Regenerate is then removed.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>If you have Regenerate and Wound (or Poison), Regenerate activates first — the negative conditions are cleared and you heal. You do <em>not</em> take Wound or Poison damage that turn, regardless of how many negative conditions you have. <em>(p. 28)</em></span></div>
+      <p><strong>Heal 1 HP</strong> at the start of each of your turns. Regenerate is removed when the figure suffers damage — not at end of turn.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>If a figure has Regenerate and Wound/Poison can be active simultaneously, regenerate heals first removing the negative conditions. <em>(p. 28)</em></span></div>
     </div>
   </div>
 
@@ -621,8 +621,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       <p>Most conditions say "removed at the <strong>end of your next turn</strong>." The key is <em>when</em> the condition was applied:</p>
       <p><strong>Applied during your turn</strong> — the condition is active for the rest of your current turn <em>and</em> your entire following turn. It is removed at the end of that following turn.</p>
       <p><strong>Applied between turns</strong> (by a trap, end-of-round effect, or enemy action during their turn) — the condition lasts through your <em>next</em> full turn and is removed at the end of it.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>A condition applied <em>during</em> your turn does <strong>not</strong> clear at the end of that same turn. It persists through your next turn. You always get at least one full turn with a condition active.</span></div>
-    </div>
+     </div>
   </div>
 
 </div><!-- /tab-conditions -->
@@ -682,8 +681,8 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>Deal <strong>0 damage</strong>. The modifier deck is reshuffled at the <strong>end of the round</strong> in which this card is drawn. Attack effects (conditions, Push, Pull, etc.) still apply normally.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>A ×0 only nullifies the <em>damage</em> — attack effects like conditions and forced movement still trigger. Null does <em>not</em> prevent conditions. <em>(p. 26)</em></span></div>
+      <p>Deal <strong>0 damage</strong>. The modifier deck is reshuffled at the end of the players turn. Attack effects (conditions, Push, Pull, etc.) still apply normally.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>A ×0 only nullifies the <em>damage</em> — attack effects like conditions and forced movement still trigger. <em>(p. 26)</em></span></div>
     </div>
   </div>
 
@@ -697,7 +696,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       </div>
     </div>
     <div class="card-body">
-      <p>Deal <strong>double damage</strong>. The modifier deck is reshuffled at the <strong>end of the round</strong> in which this card is drawn. <em>(p. 25)</em></p>
+      <p>Deal <strong>double damage</strong>. The modifier deck is reshuffled at the end of the players turn.</p>
       <div class="callout"><span class="callout-icon">⚠</span><span>All modifiers (bonuses, penalties, rolling effects) are <em>added first</em>, then the total is multiplied by 2. <em>(p. 25)</em></span></div>
     </div>
   </div>
@@ -720,8 +719,8 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p><strong>Shield X</strong> reduces incoming attack damage by X for each separate attack. Shield applies after the attack modifier is resolved but before effects like Brittle or Ward.</p>
-      <p><strong>Pierce X</strong> ignores X points of a target's Shield on this attack. Multiple Pierce effects stack.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Shield applies to the full resolved attack damage, including the +1 from Poison (since Poison increases attack damage, not a separate source). Shield does <em>not</em> reduce damage from traps, hazardous terrain, Wound, Bane, or non-attack damage sources. <em>(p. 31)</em></span></div>
+      <p><strong>Pierce X</strong> reduces X points of a target's Shield on this attack. Multiple Pierce effects stack.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Shield does <em>not</em> reduce damage from traps, hazardous terrain, Wound, Poison, Bane, Retaliate, or any condition. <em>(p. 31)</em></span></div>
     </div>
   </div>
 
@@ -763,7 +762,6 @@ main { padding: 16px 12px 32px; flex: 1; }
           <tr><td>Elemental infuse</td><td>End of your turn</td></tr>
         </tbody>
       </table>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Attack effects (conditions, Push/Pull) apply <em>even if the attack deals 0 damage</em> after shields — even if a ×0 null card was drawn. <em>(p. 26)</em></span></div>
     </div>
   </div>
 
@@ -795,8 +793,8 @@ main { padding: 16px 12px 32px; flex: 1; }
     </div>
     <div class="card-body">
       <p><strong>Push X</strong> forces the target to move up to X hexes, with each hex moving the target <em>farther away</em> from the source. <strong>Pull X</strong> moves the target up to X hexes <em>closer</em>. The attacker chooses the path.</p>
-      <p>Forced movement triggers hazardous terrain on each hex entered. The pushed/pulled figure can be moved through friendly figures, but not through enemies or obstacles.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Forced movement does <em>not</em> cost extra for difficult terrain — it ignores movement point costs entirely. It can also be used to move a figure onto a hazardous hex intentionally. <em>(p. 32)</em></span></div>
+      <p>Forced movement triggers hazardous terrain on each hex entered (but not for flying creatures) and all other movement rules apply.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Forced movement does <em>not</em> cost extra for difficult terrain. <em>(p. 32)</em></span></div>
     </div>
   </div>
 
@@ -821,7 +819,25 @@ main { padding: 16px 12px 32px; flex: 1; }
     <div class="card-body">
       <p><strong>Move X</strong> allows you to move up to X hexes. Each hex entered costs 1 movement, except difficult terrain which costs 2.</p>
       <p><strong>Jump</strong> (as part of a Move ability) ignores all terrain and figures <em>along the path</em>. The final hex still costs 1 movement, still obeys occupancy rules, and still triggers hazardous terrain on landing.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>You cannot end your movement on an occupied hex — whether ally, enemy, or obstacle.<em>(p. 24)</em></span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>You cannot end your movement on an occupied hex — whether ally, enemy, or obstacle.<em> (p. 24)</em></span></div>
+    </div>
+  </div>
+
+  <!-- FLYING -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge-icon-wrap" style="background:#2a5a4a">
+        <img src="assets/icons/fly.svg" alt="Flying icon">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Flying</div>
+        <span class="card-sub">Movement rules</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Flying</strong> allows a figure to ignore all terrain costs and effects <em>along the path</em>, including difficult terrain, hazardous terrain, and obstacles. The figure may pass through hexes occupied by other figures.</p>
+      <p>The destination hex must still be empty, and hazardous terrain the figure ends on does not deal damage.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Unlike Jump, Flying applies is an active bonus — not just applying to single move ability.<em> (p. 24)</em></span></div>
     </div>
   </div>
 
@@ -840,25 +856,9 @@ main { padding: 16px 12px 32px; flex: 1; }
       <p><strong>Teleport X</strong> places the figure on any empty hex within range X. No path is taken — walls, obstacles, terrain, and figures between origin and destination are all ignored.</p>
       <p>Teleport is not movement. It is not prevented by Immobilize and does not trigger abilities that react to movement.</p>
       <div class="callout"><span class="callout-icon">⚠</span><span>No terrain effects apply along the way, but hazardous terrain on the <em>destination</em> hex still deals damage on arrival. <em>(p. 24)</em></span></div>
-    </div>
-  </div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>A figure cannot teleport into an unrevealed room, but can teleport into a door, opening it.(p. 24)</em></span></div>
 
-  <!-- FLYING -->
-  <div class="card">
-    <div class="card-header">
-      <div class="badge-icon-wrap" style="background:#2a5a4a">
-        <img src="assets/icons/fly.svg" alt="Flying icon">
-      </div>
-      <div class="card-meta">
-        <div class="card-title">Flying</div>
-        <span class="card-sub">Movement rules</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <p><strong>Flying</strong> allows a figure to ignore all terrain costs and effects <em>along the entire path and on the destination hex</em>, including difficult terrain, hazardous terrain, traps, and obstacles. The figure may pass through hexes occupied by other figures.</p>
-      <p>The destination hex must be <strong>unoccupied</strong> — no other figures, walls, or objectives — but it may contain obstacles, traps, or hazardous terrain. Flying figures do <em>not</em> suffer trap or hazardous terrain damage on their landing hex.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>Unlike Jump, Flying applies to the <em>entire</em> move — not just a single ability. Hazardous terrain and traps are ignored on every hex, including the destination. <em>(p. 24)</em></span></div>
-    </div>
+	</div>
   </div>
 
   <h2 class="section-header">Terrain types</h2>
@@ -877,8 +877,7 @@ main { padding: 16px 12px 32px; flex: 1; }
           <tr><td>Walls</td><td>Block movement and line-of-sight</td></tr>
         </tbody>
       </table>
-      <div class="callout"><span class="callout-icon">⚠</span><span><strong>Flying</strong> ignores all terrain effects on every hex including the destination — no trap or hazardous terrain damage anywhere. <strong>Jumping</strong> skips difficult terrain costs but still triggers traps and hazardous terrain on the landing hex. <em>(p. 24)</em></span></div>
-    </div>
+     </div>
   </div>
 
 </div><!-- /tab-movement -->
@@ -911,13 +910,27 @@ main { padding: 16px 12px 32px; flex: 1; }
     <div class="card-header">
       <img src="assets/icons/permanent.svg" class="badge-img" alt="Persistent icon" style="width:58px;height:58px">
       <div class="card-meta">
-        <div class="card-title">Persistent</div>
+        <div class="card-title">Persistent Bonus</div>
         <span class="card-sub">Card usage</span>
       </div>
     </div>
     <div class="card-body">
-      <p>A <strong>persistent</strong> bonus activate when the ability is performed and expire when the specified removal condition has been fulfilled.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>You may choose to end a persistent ability at any time. <em>(p. 38)</em></span></div>
+      <p>A <strong>persistent</strong> bonus activate when the ability is performed and expire when the specified removal condition has been fulfilled. If no removal condition is specified, the bonus expires at the end of the scenario.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>You may choose to end a persistent ability at any time. <em>(p. 30)</em></span></div>
+    </div>
+  </div>
+
+  <!-- ROUND BONUS -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/round.svg" class="badge-img" alt="Round bonus icon">
+      <div class="card-meta">
+        <div class="card-title">Round Bonus</div>
+        <span class="card-sub">Card usage</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>A <strong>round bonus</strong> activates when the ability is performed and expires at the end of the current round.</p>
     </div>
   </div>
 
