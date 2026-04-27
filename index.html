@@ -459,7 +459,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       <span class="card-page">Page 28</span>
     </div>
     <div class="card-body">
-      <p>Cannot perform any <strong>attack</strong> abilities. The figure may still move, use items, and perform non-attack abilities.</p>
+      <p>Cannot perform any <strong>attack</strong> abilities. The figure may still move, use items, and perform non-attack abilities. Disarm is removed at the end of the figure’s next turn.</p>
     </div>
   </div>
 
@@ -474,7 +474,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       <span class="card-page">Page 28</span>
     </div>
     <div class="card-body">
-      <p>Cannot <strong>move</strong> voluntarily. The figure may still perform all other actions normally, however.</p>
+      <p>The figure cannot perform any move abilities. Immobilize is removed at the end of the figure’s next turn.</p>
       <div class="callout"><span class="callout-icon">⚠</span><span><strong>Push, Pull, and Teleport</strong> still work normally — they are not move abilities. However, <strong>Controlled</strong> and <strong>Granted</strong> movement are prevented: both are move abilities, and Immobilize stops you from performing move abilities entirely.</span></div>
     </div>
   </div>
@@ -506,7 +506,7 @@ main { padding: 16px 12px 32px; flex: 1; }
       <span class="card-page">Page 28</span>
     </div>
     <div class="card-body">
-      <p>Perform all attacks at <strong>Disadvantage</strong>. Draw two attack modifier cards; use the worse result and ignore the better one.</p>
+      <p>Perform all attacks at <strong>Disadvantage</strong>. Draw two attack modifier cards; use the worse result and ignore the better one. Muddle is removed at the end of the figure’s next turn.</p>
     </div>
   </div>
 
@@ -537,8 +537,8 @@ main { padding: 16px 12px 32px; flex: 1; }
       <span class="card-page">Page 28</span>
     </div>
     <div class="card-body">
-      <p>Cannot perform <strong>any abilities</strong> and cannot use items on your turn.</p>
-      <div class="callout"><span class="callout-icon">⚠</span><span>A stunned character must <em>still</em> play two cards at the start of the round to determine initiative. They simply cannot act when their turn comes.</span></div>
+      <p>Cannot perform <strong>any abilities</strong> and cannot use items on your turn. Stun is removed at the end of the figure’s next turn.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>A stunned character must <em>still</em> select two cards at the start of the round to determine initiative, but must discard the cards without playing them.</span></div>
     </div>
   </div>
 
@@ -658,7 +658,7 @@ main { padding: 16px 12px 32px; flex: 1; }
 ───────────────────────────────────────── -->
 <div id="tab-attack" class="tab-panel" role="tabpanel" aria-labelledby="btn-attack">
 
-  <h2 class="section-header">Attack modifier rules</h2>
+  <h2 class="section-header">Attack Modifiers</h2>
 
   <!-- ADVANTAGE & DISADVANTAGE -->
   <div class="card">
@@ -728,6 +728,66 @@ main { padding: 16px 12px 32px; flex: 1; }
     <div class="card-body">
       <p>Deal <strong>0 damage</strong>. The modifier deck is reshuffled at the end of the players turn. Attack effects (conditions, Push, Pull, etc.) still apply normally.</p>
       <div class="callout"><span class="callout-icon">⚠</span><span>A ×0 only nullifies the <em>damage</em> — attack effects like conditions and forced movement still trigger.</span></div>
+    </div>
+  </div>
+  <h2 class="section-header">Attack Effect</h2>
+  <!-- TARGET -->
+  <div class="card">
+    <div class="card-header">
+      <img src="assets/icons/target.svg" class="badge-img" alt="Target icon">
+      <div class="card-meta">
+        <div class="card-title">Target</div>
+        <span class="card-sub">Attack Effect</span>
+      </div>
+      <span class="card-page">Page 21</span>
+    </div>
+    <div class="card-body">
+      <p><strong>Target X</strong> allows an attack ability to target up to X figures. Each targeted figure is attacked separately, drawing a modifier card for each one.</p>
+	  <div class="callout"><span class="callout-icon">⚠</span><span>Targeted effects require line of sight. This requires being able to draw a line from one hex to another without touching a wall.</span></div>
+    </div>
+  </div>
+
+   <!-- RANGE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge-icon-wrap" style="background:#2a5a4a">
+        <img src="assets/icons/range.svg" alt="Range icon" style="width:72%;height:72%">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Range</div>
+        <span class="card-sub">Attack Effect</span>
+      </div>
+      <span class="card-page">Page 21</span>
+    </div>
+    <div class="card-body">
+      <p><strong>Range X</strong> means the attack can target any figure within X hexes. Range is counted along the shortest open path, but the path does not need to be unobstructed — only line-of-sight matters for ranged attacks.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>An attack with no Range value is a <strong>melee</strong> attack and can only target adjacent figures.</span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Ranged attacks against adjacent figures have Disadvantage.</span></div>
+	  <div class="callout"><span class="callout-icon">⚠</span><span>Non-attack abilities with no specified range value can target figures at any range. </span></div>
+    </div>
+  </div>
+  
+ <!-- AREA OF EFFECT -->
+  <div class="card">
+    <div class="card-header">
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        <img src="assets/icons/active-hex.svg" class="badge-img" alt="Active hex">
+        <img src="assets/icons/ally-hex.svg" class="badge-img" alt="Ally hex">
+        <img src="assets/icons/target-hex.svg" class="badge-img" alt="Target hex">
+        <img src="assets/icons/blank-hex.svg" class="badge-img" alt="Blank hex">
+      </div>
+      <div class="card-meta">
+        <div class="card-title">Area of Effect</div>
+        <span class="card-sub">Attack Effect</span>
+      </div>
+      <span class="card-page">Page 22</span>
+    </div>
+    <div class="card-body">
+      <p>Grey indicates where the acting figure occupies. Blue is where an ally <strong>must</strong> occupy. Red is the target of the AOE. Blank are used as spaces between other hex types.</p>
+      <div class="callout"><span class="callout-icon">⚠</span><span>Area-of-effect (AoE) attacks hit all figures in the pattern simultaneously and do not draw attack modifiers for each target.</span></div>
+	  <div class="callout"><span class="callout-icon">⚠</span><span>Rotating and mirroring the depicted area of effect is permitted.</span></div>
+      <div class="callout"><span class="callout-icon">⚠</span><span>If an ability with an area of effect gains "+1 <img src="assets/icons/target.svg" class="icon-inline" alt="target icon">," an additional figure within the ability's range, but outside the area of effect, can be targeted.</span></div>
+
     </div>
   </div>
 
@@ -1053,6 +1113,7 @@ main { padding: 16px 12px 32px; flex: 1; }
         <div class="card-title">Refresh</div>
         <span class="card-sub">Card usage</span>
       </div>
+      <span class="card-page">N/A</span>
     </div>
     <div class="card-body">
       <p>Some items show a <strong>refresh</strong> icon indicating when they become available again after use. The refresh trigger varies by item — common triggers include the <strong>start of your next turn</strong>, the <strong>end of the round</strong>, or a <strong>long rest</strong>.</p>
